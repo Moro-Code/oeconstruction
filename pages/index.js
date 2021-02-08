@@ -54,8 +54,11 @@ export default function Home({ services }) {
         </Link>
       </Hero>
       <div className="flex flex-col w-full mt-5 mb-5 items-center">
-        <h2 className="text-6xl font-handwriting"> Services We Offer</h2>
-        <p className="text-left max-w-screen-sm md:max-w-screen-lg text-xl font-sans my-4 break-word">
+        <h2 className="text-4xl md:text-6xl font-handwriting">
+          {" "}
+          Services We Offer
+        </h2>
+        <p className="text-left m-4 md:my-4 max-w-screen-sm md:max-w-screen-lg text-lg md:text-xl font-sans break-word">
           We offer a broad range of professional renovation services for all
           your commercial and residential construction needs in Ottawa and
           surrounding areas. We guarantee quality, speed, and unparalleled
@@ -64,12 +67,14 @@ export default function Home({ services }) {
         <div className="flex flex-col">
           {services.map((service) => (
             <Link href={service.link} key={service.title}>
-              <Card
-                image={service.image}
-                imageAltText={service.imageAltText}
-                title={service.title}
-                text={service.text}
-              />
+              <a>
+                <Card
+                  image={service.image}
+                  imageAltText={service.imageAltText}
+                  title={service.title}
+                  text={service.text}
+                />
+              </a>
             </Link>
           ))}
         </div>
