@@ -6,7 +6,7 @@ export default function Layout({ children }) {
   return (
     <div className="relative w-screen h-screen">
       <NavMenu
-        logoText="O&E Painting and Drywall"
+        logoText="O&A Painting and Drywall Inc."
         links={[
           {
             href: "/",
@@ -28,7 +28,7 @@ export default function Layout({ children }) {
       />
       {children}
       <Footer
-        copyRightText="O&E Painting and Drywall Inc."
+        copyRightText="O&A Painting and Drywall Inc."
         links={[
           {
             href: "/pages/about-us",
