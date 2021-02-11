@@ -62,7 +62,7 @@ export default function ContactUs() {
             alt="image wih contact us written in scrabble letters on a green background"
           />
         </div>
-        <div className="flex-grow flex justify-center items-center w-full">
+        <div className="flex-grow flex justify-center items-center w-ful my-10 mx-2">
           <ContactUsForm
             apiUrl={process.env.NEXT_PUBLIC_CONTACT_FORM_URL}
             onSubmit={handleSubmit}
