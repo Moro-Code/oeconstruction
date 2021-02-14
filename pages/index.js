@@ -3,10 +3,11 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import Hero from "../components/organisms/Hero";
-import { getAllServices } from "../lib/services";
 import Card from "../components/molecules/Card";
+import { getSortedContent } from "../lib/content";
 
 export default function Home({ services }) {
+  console.log(services);
   return (
     <>
       <Head>
@@ -95,7 +96,7 @@ export default function Home({ services }) {
                   image={service.image}
                   imageAltText={service.imageAltText}
                   title={service.title}
-                  text={service.text}
+                  text={service.description}
                 />
               </a>
             </Link>
@@ -107,7 +108,13 @@ export default function Home({ services }) {
 }
 
 export async function getStaticProps() {
-  const services = getAllServices();
+  let services = getSortedContent("services");
+  services = services.map((value) => {
+    return {
+      ...value,
+      link: `/services/${value.id}`,
+    };
+  });
   return {
     props: {
       services,

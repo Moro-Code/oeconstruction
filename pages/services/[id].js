@@ -4,7 +4,7 @@ import Head from "next/head";
 import { getAllContentIds, getContentDataById } from "../../lib/content";
 import Link from "next/link";
 
-export default function Pages({ pageData }) {
+export default function Services({ pageData }) {
   return (
     <div className="w-full">
       <Head>
@@ -59,7 +59,7 @@ export default function Pages({ pageData }) {
 }
 
 export async function getStaticPaths() {
-  const paths = getAllContentIds("pages");
+  const paths = getAllContentIds("services");
   return {
     paths,
     fallback: false,
@@ -67,7 +67,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const pageData = await getContentDataById("pages", params.id);
+  const pageData = await getContentDataById("services", params.id);
   return {
     props: {
       pageData,

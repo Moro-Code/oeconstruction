@@ -14,7 +14,6 @@ export default function Hero(props) {
     let interval;
     if (props.images.length > 1) {
       interval = setInterval(() => {
-        console.log(currentImageIndex);
         if (currentImageIndex < props.images.length - 1) {
           setImageIndex(currentImageIndex + 1);
         } else {
