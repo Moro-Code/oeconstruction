@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Head from "next/head";
-import Layout from "../../components/organisms/Layout";
 import { getAllContentIds, getContentDataById } from "../../lib/content";
 
 export default function Pages({ pageData }) {
