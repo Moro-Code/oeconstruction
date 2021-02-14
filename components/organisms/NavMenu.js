@@ -13,7 +13,7 @@ export default function NavMenu(props) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <div className="w-full flex justify-between items-center h-16 relative px-2">
-      <h1 className="font-title text-lg md:text-2xl lg:text-3xl">
+      <h1 className="font-title text-lg md:text-xl lg:text-3xl">
         {props.logoText}
       </h1>
       <div className="hidden md:flex">

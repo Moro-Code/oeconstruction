@@ -11,6 +11,29 @@ export default function Home({ services }) {
     <>
       <Head>
         <title>Home</title>
+        {/*Twitter Card*/}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="O&A Painting and Drywall Inc." />
+        <meta
+          name="twitter:description"
+          content="For all your commercial and residential renovation needs in the Ottawa, ON area. O&A Painting and Drywall Inc provides top quality service at reasonable prices"
+        />
+        <meta
+          name="twitter:image:src"
+          content={`${process.env.NEXT_PUBLIC_DOMAIN}/images/logo.jpeg`}
+        />
+        {/*Open Graph Data*/}
+        <meta property="og:title" content="O&A Painting and Drywall Inc." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={process.env.NEXT_PUBLIC_DOMAIN} />
+        <meta
+          property="og:image"
+          content={`${process.env.NEXT_PUBLIC_DOMAIN}/images/logo.jpeg`}
+        />
+        <meta
+          property="og:description"
+          content="For all your commercial and residential renovation needs in the Ottawa, ON area. O&A Painting and Drywall Inc provides top quality service at reasonable prices"
+        />
       </Head>
       <Hero
         images={[

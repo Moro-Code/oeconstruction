@@ -7,7 +7,7 @@ import NavItem from "../atoms/NavItem";
  */
 export default function Footer(props) {
   return (
-    <div className="relative bottom-0 left-0 w-full h-20 bg-black flex flex-col mt-2 z-0">
+    <div className="w-full h-20 bg-black flex flex-col mt-2">
       <nav className="flex w-full justify-center flex-wrap m-2">
         {props.links.map((link) => {
           return (

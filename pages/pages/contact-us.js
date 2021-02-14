@@ -34,12 +34,47 @@ export default function ContactUs() {
     <>
       <Head>
         <title>Contact Us</title>
+        <meta
+          name="description"
+          content="Reach out to us for all your ottawa commercial and residential renovation needs"
+        />
+        {/*Twitter Card*/}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us" />
+        <meta
+          name="twitter:description"
+          content="Reach out to us for all your ottawa commercial and residential renovation needs"
+        />
+        <meta
+          name="twitter:image:src"
+          content={`${process.env.NEXT_PUBLIC_DOMAIN}/images/contact-us.jpg`}
+        />
+        {/*Open Graph Data*/}
+        <meta property="og:title" content="Contact Us" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={process.env.NEXT_PUBLIC_DOMAIN} />
+        <meta
+          property="og:image"
+          content={`${process.env.NEXT_PUBLIC_DOMAIN}/images/contact-us.jpg`}
+        />
+        <meta
+          property="og:description"
+          content="Reach out to us for all your ottawa commercial and residential renovation needs"
+        />
       </Head>
-      <div className="w-full h-full flex flex-col items-center">
+      <div className="w-full">
+        <div className="hidden lg:block relative w-full h-96">
+          <Image
+            src="/images/contact-us.jpg"
+            layout="fill"
+            objectFit="cover"
+            alt="image wih contact us written in scrabble letters on a green background"
+          />
+        </div>
         <div
-          className="hidden lg:block relative w-full"
+          className="block lg:hidden relative w-full"
           style={{
-            height: 500,
+            height: 350,
           }}
         >
           <Image
@@ -49,20 +84,7 @@ export default function ContactUs() {
             alt="image wih contact us written in scrabble letters on a green background"
           />
         </div>
-        <div
-          className="block lg:hidden md:block relative w-full"
-          style={{
-            height: 450,
-          }}
-        >
-          <Image
-            src="/images/contact-us.jpg"
-            layout="fill"
-            objectFit="cover"
-            alt="image wih contact us written in scrabble letters on a green background"
-          />
-        </div>
-        <div className="flex-grow flex justify-center items-center w-full my-10 mx-2">
+        <div className="flex justify-center items-center w-full my-10 p-3">
           <ContactUsForm
             apiUrl={process.env.NEXT_PUBLIC_CONTACT_FORM_URL}
             onSubmit={handleSubmit}
