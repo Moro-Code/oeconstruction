@@ -84,18 +84,33 @@ export default function ContactUs() {
             alt="image wih contact us written in scrabble letters on a green background"
           />
         </div>
-        <div className="flex justify-center items-center w-full my-10 p-3">
-          <ContactUsForm
-            apiUrl={process.env.NEXT_PUBLIC_CONTACT_FORM_URL}
-            onSubmit={handleSubmit}
-            isSubmitted={isSubmitted}
-            isSubmitFailed={submitFailed}
-            submitSucceededMessage="Thank you for contacting us! We will reply to you shortly"
-            submitFailedMessage={
-              "Sorry an error occurred. Contact us at " +
-              process.env.NEXT_PUBLIC_CONTACT_NUMBER
-            }
-          />
+
+        <div className="flex w-full flex-wrap my-10 p-3 justify-center">
+          <div className="w-full md:w-1/5 flex-grow flex justify-center">
+            <ContactUsForm
+              apiUrl={process.env.NEXT_PUBLIC_CONTACT_FORM_URL}
+              onSubmit={handleSubmit}
+              isSubmitted={isSubmitted}
+              isSubmitFailed={submitFailed}
+              submitSucceededMessage="Thank you for contacting us! We will reply to you shortly"
+              submitFailedMessage={
+                "Sorry an error occurred. Contact us at " +
+                process.env.NEXT_PUBLIC_CONTACT_NUMBER
+              }
+            />
+          </div>
+          <div className="mt-5 md:mt-0 w-full md:w-1/5 self-center text-center font-handwriting text-5xl md:underline">
+            Or
+          </div>
+          <div className="mt-5 md:mt-0 w-full md:w-1/5 flex-grow flex flex-col items-center">
+            <p className="text-5xl font-handwriting"> Call Us At</p>
+            <a
+              href={`tel:${process.env.NEXT_PUBLIC_CONTACT_NUMBER}`}
+              className="text-3xl lg:text-5xl mt-10 hover:underline hover:text-blue-600"
+            >
+              {process.env.NEXT_PUBLIC_CONTACT_NUMBER}
+            </a>
+          </div>
         </div>
       </div>
     </>

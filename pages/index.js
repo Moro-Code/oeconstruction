@@ -7,7 +7,6 @@ import Card from "../components/molecules/Card";
 import { getSortedContent } from "../lib/content";
 
 export default function Home({ services }) {
-  console.log(services);
   return (
     <>
       <Head>

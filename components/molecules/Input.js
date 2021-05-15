@@ -27,6 +27,7 @@ export default function Input(props) {
           type={props.inputType}
           placeholder={props.placeHolder}
           value={props.value}
+          pattern={props.pattern}
           onChange={props.onChange}
           required={props.required}
         />
@@ -71,6 +72,11 @@ Input.propTypes = {
    * additional label styles
    */
   additionalLabelStyles: PropTypes.string,
+
+  /**
+   * regexp patten to match
+   */
+  pattern: PropTypes.string,
 
   /**
    * onChange function for when the value of the form changes

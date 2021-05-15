@@ -31,10 +31,6 @@ export default function Layout({ children }) {
             text: "About Us",
           },
           {
-            href: "/services",
-            text: "Services We Offer",
-          },
-          {
             href: "/pages/contact-us",
             text: "Contact Us",
           },

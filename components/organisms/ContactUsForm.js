@@ -6,6 +6,8 @@ import Icon from "../atoms/Icon";
 export default function ContactUsForm(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [budget, setBudget] = useState("");
   const [message, setMessage] = useState("");
   if (props.isSubmitted) {
     return (
@@ -65,9 +67,32 @@ export default function ContactUsForm(props) {
           required
         />
         <Input
+          name="telephone"
+          inputType="tel"
+          label="Phone Number"
+          placeHolder="613-xxx-xxx"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          value={phone}
+          onChange={(e) => setPhone(e.value)}
+          additionalInputStyles="border border-gray rounded-lg p-2 focus:border-blue-500 focus:shadow-xl"
+          additionalLabelStyles="text-lg font-handwriting"
+          required
+        />
+        <Input
+          name="budget"
+          inputType="number"
+          label="What's your budget ?"
+          placeHolder="$"
+          value={budget}
+          onChange={(e) => setBudget(e.value)}
+          additionalInputStyles="border border-gray rounded-lg p-2 focus:border-blue-500 focus:shadow-xl"
+          additionalLabelStyles="text-lg font-handwriting"
+          required
+        />
+        <Input
           name="message"
           inputType="textarea"
-          label="Your Message"
+          label="Tell us about your project!"
           value={message}
           maxLength={500}
           onChange={(e) => setMessage(e.value)}
@@ -75,7 +100,10 @@ export default function ContactUsForm(props) {
           additionalLabelStyles="text-lg font-handwriting"
           required
         />
-        <button className="rounded-md bg-black text-white py-1 px-4 text-lg hover:bg-blue-900 font-handwriting mt-3">
+        <button
+          className="rounded-md bg-black text-white py-1 px-4 text-lg hover:bg-blue-900 font-handwriting mt-3"
+          type="submit"
+        >
           <Icon icon="icon-envelop" additionalStyles="text-current" /> Submit{" "}
         </button>
       </form>

@@ -42,10 +42,12 @@ export default function Pages({ pageData }) {
         <h1 className="text-5xl md:text-6xl mb-5 font-handwriting text-center">
           {pageData.title}
         </h1>
-        <div
-          className="prose lg:prose-xl"
-          dangerouslySetInnerHTML={{ __html: pageData.contentHtml }}
-        />
+        <div className="flex justify-center">
+          <div
+            className="prose lg:prose-xl"
+            dangerouslySetInnerHTML={{ __html: pageData.contentHtml }}
+          />{" "}
+        </div>
       </div>
       <div className="flex w-full justify-center">
         <Link href="/pages/contact-us">
